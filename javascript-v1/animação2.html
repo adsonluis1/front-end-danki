@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        div{
+            width: 60vw;
+            margin: auto;
+            height: 50px;
+            overflow: hidden;
+            margin-top: 20px;
+            
+        }
+        span{
+            font-size: 0.6em;
+            cursor: pointer;
+        }
+        .animacao { 
+            transition: 2s;
+
+            color: black;
+            height: auto;
+            overflow: auto;
+            background-color: grey;
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+
+        }
+        div.tela3{
+            background-color: cadetblue;
+            padding-bottom: 10px;
+            border-radius: 10px 10px 0px 0px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div class="tela">
+
+        <h1>titulo <span class="telinha" onclick="aparecer()">ler mais</span></h1>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita commodi omnis, fuga, voluptatibus asperiores ea laboriosam quidem suscipit esse repudiandae temporibus eveniet deserunt, tempore voluptates aspernatur ex inventore quaerat? Magni!
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro vel excepturi iste quod animi rerum voluptates, labore reprehenderit architecto molestiae similique perspiciatis voluptatum dolore odio rem ex provident alias expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem recusandae, consectetur iure possimus repudiandae, ullam quis modi rerum similique facere sint libero sapiente. Laudantium praesentium odit ut quis excepturi.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, cupiditate maxime, odio velit molestiae ab nesciunt incidunt magnam consectetur voluptatem aspernatur commodi dolor magni minima perferendis corporis laudantium, optio illum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magnam eum inventore nisi architecto. Quidem laudantium suscipit minus? Provident officia facilis non accusamus suscipit harum corporis, animi esse repellat deleniti!</p>
+        </div>
+
+
+        <div class="tela2">
+            <h1>titulo 2 <span class="telinha2" onclick="aparecer2()">ler mais</span> </h1>
+        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas illo cum, eligendi ad minus recusandae asperiores sed consequuntur vitae cumque quo facere saepe. Amet atque asperiores, veniam iusto nihil quaerat.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit culpa ea illo fugit quidem sunt! Officia molestias eius minima. Rerum eum nam quod perferendis adipisci deleniti magni facere, provident voluptates!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, quod. Sequi hic dolores architecto aspernatur doloribus, accusamus nulla voluptas! Quidem earum, porro minima quia perspiciatis nobis sunt asperiores animi ex.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, aperiam minima. Excepturi quas quae adipisci corporis laudantium error consequatur eligendi accusantium. Eaque dolore atque aut quos necessitatibus tempora saepe assumenda!
+            </p>
+        </div>
+
+        <div class="tela3">
+            <h1>titulo3 <span class="telinha3" onclick="apaercer3()">ler mais</span></h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est iste necessitatibus, architecto ut neque nemo numquam repudiandae molestiae voluptate exercitationem ea corrupti illum doloremque deleniti nobis repellendus minima dignissimos a!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit recusandae ad, ullam magnam accusantium aperiam aut assumenda porro ducimus sequi voluptate omnis ratione blanditiis corrupti deleniti facilis aspernatur placeat dolorem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia officia repellendus praesentium, quos dolore necessitatibus sint? Quisquam harum laborum et soluta asperiores saepe alias illum natus architecto! Ipsa, fugit minima!Lorem
+                
+            </p>
+        </div>
+        
+    </main>
+    <script>
+        function aparecer(){
+            const div = document.querySelector('div.tela')
+            const span = document.querySelector('span.telinha')
+
+            if(div.classList.contains('animacao')){
+                div.classList.remove('animacao')
+                span.innerHTML= 'ler mais'
+
+            }else{
+                div.classList.add('animacao')
+                span.innerHTML= 'ler menos'
+            }
+        }
+
+
+        function aparecer2(){
+            const div = document.querySelector('div.tela2')
+            const span = document.querySelector('span.telinha2')
+
+            if(div.classList.contains('animacao')){
+               
+                div.classList.remove('animacao')
+
+                 span.innerHTML= 'ler mais'
+            }else{
+                div.classList.add('animacao')
+                span.innerHTML= 'ler menos'
+            }
+        }
+
+        function apaercer3(){
+            const tela3 = document.querySelector('div.tela3')
+            const telinha3 = document.querySelector('span.telinha3')
+            
+
+            if(tela3.classList.contains('animacao')){
+                tela3.classList.remove('animacao')
+                telinha3.innerHTML= 'ler mais'
+                
+            }else{
+                tela3.classList.add('animacao')
+                telinha3.innerHTML= 'ler menos'
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

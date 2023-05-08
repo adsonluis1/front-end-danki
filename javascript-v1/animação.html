@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hihih</title>
+    <style>
+        body{
+            position: relative;
+        }
+        div{
+            width: 250px;
+            height: 250px;
+
+            background-color: red;
+        }
+
+        .animacao{
+            transition: 3s;
+            
+            background-color: blueviolet;
+            border-radius: 50%;
+            margin: 200px;
+            margin-top: 200px;
+            padding: 50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div onclick="clicou()" id="caixa"></div>
+
+    <script>
+
+        function clicou(){
+
+        var div = document.getElementById('caixa')
+        div.classList.add('animacao')
+        }
+    </script>
+</body>
+</html>
