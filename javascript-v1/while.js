@@ -3,7 +3,7 @@
 var n=1
 
 while(n < 10){ // while verifica primeiro para fzr a ação
-    console.log()
+    console.log(n)
     n++
 }
 
