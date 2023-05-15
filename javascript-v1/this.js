@@ -1,18 +1,32 @@
-// function aluno(nome , nota){
-//     console.log(nome)
-//     console.log(nota)
+function aluno(nome , nota){
+    this.nome = nome
+    this.nota = nota
+
+    this.arrow=()=>{
+        setTimeout(()=>{
+
+            console.log(this.nome)
+            console.log(this.nota)
+
+        },2000)
+    }
+}
+const al1 = new aluno('adson' , 10)
+al1.arrow()
 
 
-// aluno( 'adson' , 100)
+// var aluno = {
+//     nome: 'adson',
+//     nota: 10 ,
+//     falarNome: function(){
+//         console.log (this.nome)
+//     },
+//     falarNota:function(){
+//         console.log(this.nota)
+//     }
+// }    
 
-// dados_arrow=function(){
-//     setTimeout(()=>{
+// aluno.falarNome()
+// aluno.falarNota()
 
-//     console.log(nome)
-//     console.log(nota)
-    
-//     }, 2000)
-// }
-// }
-// aluno('adson' , 5)
 
