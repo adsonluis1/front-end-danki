@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    height: 500px;
+    width: 300px;
+    border: 1px solid black;
+    margin-top: 100px;
+    background-color: antiquewhite;
+    
+    
+}
+
+div{
+    background-color: aqua;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+button{
+    margin: 30px;
+    padding: 5px;
+    width: 80px;
+
+    background-color: darkslateblue;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.selecionado{
+    background-color: darkslateblue;
+    border: 1px solid blue;
+}
