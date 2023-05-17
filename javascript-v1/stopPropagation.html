@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padrao</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            
+        }
+        section#caixa{
+            width: 300px;
+            height: 500px;
+
+            background-color: antiquewhite;
+            border: 3px solid black;
+
+            
+        }
+        div.filho{
+            height: 30px;
+            width: 100px;
+            background-color: aquamarine;
+            border: 1px solid black;
+
+            display: block;
+            margin: auto;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <section id="caixa">
+        
+            <div id="d1" class="filho"></div>
+            <div id="d2" class="filho"></div>
+            <div id="d3" class="filho"></div>
+            <div id="d4" class="filho"></div>
+            <div id="d5" class="filho"></div>
+            <div id="d6" class="filho"></div>
+
+        </section>
+
+
+    </main>
+
+
+
+
+</body>
+
+<script>
+//serve pra quando tiver uma fuction no pai ela nn ser herdada pelo filho
+var caixa = document.getElementById('caixa')
+
+var filho = [...document.querySelectorAll('.filho')]
+
+    caixa.addEventListener('click' ,()=>{
+        alert('clicou')
+    })
+
+    filho.map((e)=>{
+        e.addEventListener('click' , (evento)=>{
+            evento.stopPropagation()
+        })
+    })
+
+</script>
+
+</html>

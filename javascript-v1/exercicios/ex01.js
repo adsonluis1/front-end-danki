@@ -192,7 +192,7 @@ function passar(){
         js2.style.display= 'none'
         js.style.display= 'block'
     }else{
-        js.style.display= 'block'
+        js2.style.display= 'block'
     }
     if(Vclick9 == true){
         php2.style.display= 'none'
@@ -204,6 +204,6 @@ function passar(){
         py2.style.display= 'none'
         py.style.display= 'block'
     }else{
-        py.style.display= 'block'
+        py2.style.display= 'block'
     }
 }
