@@ -1,0 +1,56 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+#comando{
+    
+    border: 2px solid black;
+    width: 300px;
+    height: 450px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 30px;
+    background-color: darkcyan;
+    color:white;
+}
+.button{
+    margin: auto;
+    width: 150px;
+    margin-top: 10px;
+    background-color: rgb(0, 85, 85);
+    border: 2px solid rgb(0, 65, 65);
+    cursor: pointer;
+}
+form{
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+#cursos{
+    
+    border: 2px solid black;
+    width: 300px;
+    height: 450px;
+    padding: 5px;
+    text-align: center;
+    
+    background-color: darkcyan;
+    color:white;
+}
+
+.r_button{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin-top: 10px;
+    background-color: rgb(0, 85, 85);
+    border: 2px solid rgb(0, 65, 65);
+}
+.r_button p {
+    margin-right: 20px;
+}
+
+article{
+    margin-top: 40px;
+}
