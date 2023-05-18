@@ -54,3 +54,7 @@ form{
 article{
     margin-top: 40px;
 }
+.selecionado{
+    background-color: darkred; 
+    border: red;    
+}
