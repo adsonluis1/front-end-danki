@@ -1,15 +1,12 @@
 var num1 = document.getElementById('num1')
-
 var btn_mais = document.getElementById('mais')
 var btn_menos = document.getElementById('menos')
 var btn_vezes = document.getElementById('vezes')
 var btn_dividir = document.getElementById('dividir')
 var num2 = document.getElementById('num2')
-// var num22 = Number(num2.valor)
 var tela = document.getElementById('tela')
 var btn_igual = document.getElementById('igual')
 var sinal = 0
-// var rest = 0
 
 
 btn_mais.addEventListener('click' , ()=>{

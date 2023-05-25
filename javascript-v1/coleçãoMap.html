@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <style>
+        #tela{
+            background-color: antiquewhite;
+            border: 2px solid darkblue;
+            height: auto;
+            min-height: 30px;
+            border-radius: 15px;
+            width: 100%;
+        }
+        #tela1{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="tela">
+        <p id="tela1"></p>
+    </div>
+
+</body>
+<script>
+var tela = document.getElementById('tela')
+var tela1 = document.getElementById('tela1')
+
+var mapa = new Map
+// seta a chave e o valor dela
+mapa.set('nome' , 'adson')
+mapa.set('nome2' , 'anne')
+mapa.set('marrom' , 'bombom')
+mapa.set('profesor' , 'bruno')
+console.log(mapa)
+
+// pega o valor da chave
+tela1.innerHTML+= mapa.get('nome')
+
+// faz percorrer o map
+mapa.forEach((el)=>{
+    console.log(el)
+})
+// deleta uma chave
+mapa.delete('marrom')
+console.log('----------------')
+mapa.forEach((el)=>{
+    console.log(el)
+})
+
+// mostra os vlores das chaves do map
+console.log(mapa.values())
+
+// procura no map para ver se tem uma determinada chave
+if(mapa.has('nome')){
+    console.log('aaaaaaaaaaaaa')
+}
+
+
+</script>
+</html>
