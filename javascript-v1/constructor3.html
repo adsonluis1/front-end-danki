@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        section{
+            margin: 2px;
+        }
+        #nome , #idade ,  #btn{
+            border: 2px solid black;
+            padding: 10px;
+            width: 200px;
+            margin: 5px;
+            background-color: darkblue;
+            color: white;
+
+        }
+        #click{
+            width: 100%;
+            height: 30px;
+            background-color: blue;
+            border: 2px solid white;
+            color: white;
+        }
+        #outdor{
+            border: 2px solid navy;
+            width: 100%;
+            height: auto;
+            min-height: 50px;
+            background-color: darkblue;
+        }
+        #tela{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <section>
+
+            <div id="nome">
+            <label for="inome">Nome:</label>
+            <input type="text" name="" id="inome">
+            </div>
+            
+            <div id="idade">
+            <label for="iidade">Idade:</label>
+            <input type="number" name="" id="iidade">
+            </div>
+
+            <div id="btn">
+            <button id="click">Enviar</button>
+            </div>
+
+            <div id="outdor">
+                <p id="tela"></p>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+<script>
+    class Pessoa{
+        constructor(inome , iidade){
+            this.inome= inome
+            this.iidade= iidade
+        }
+    }
+    let pessoas = []
+    const click = document.getElementById('click')
+    click.addEventListener('click' , ()=>{
+    let inome= document.getElementById('inome')
+    const iidade = document.getElementById('iidade')
+    const p = new Pessoa(inome.value , iidade.value)
+    pessoas.push(p) 
+    inome.value= ''
+    iidade.value= ''
+    console.log(pessoas)
+    const tela= document.getElementById('tela')
+    tela.innerHTML= ''
+    pessoas.map((e , i)=>{
+        tela.innerHTML+= `nome: ${e.inome} <br> idade: ${e.iidade}<br>`
+        
+    })
+
+    })
+    
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class pessoa{
+        constructor(pnome){
+            this.nome= 'adson'
+            this.nome1= 'anne'
+            this.nome2= pnome
+            this.nome3= 'xuxu'
+        }
+    }
+    const p1= new pessoa
+    const p2= new pessoa
+    const p3= new pessoa('jose')
+    console.log(p1.nome)
+    console.log(p1.nome1)
+    console.log(p2.nome)
+    console.log(p3.nome2)
+    console.log(p1.nome3)
+    console.log(p3)
+    
+</script>
+</html>
