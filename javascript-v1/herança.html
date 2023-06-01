@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>herança</title>
+</head>
+<body>
+
+
+</body>
+<script>
+
+    class carro{
+        constructor(nome , portas , pneus){
+            this.nome = nome
+            this.portas = portas
+            this.pneus = pneus
+            this.estado = 'desligado'
+            this.cor = undefined
+            this.vel = 0
+        }
+        ligar= function(){
+            this.estado = 'ligado'   
+        }
+        desligar= function(){
+            this.estado = 'desligado'
+        }
+        setcor= function(cor){
+            this.cor = cor
+        }
+        setvel= function(vel){
+            this.vel = vel
+        }
+
+    }
+
+    const c1= new carro('gol' , 4 , 4)
+    c1.ligar()
+    c1.setcor('vermelho')
+    c1.setvel(0)
+    console.log(`nome: ${c1.nome}`)
+    console.log(`portas: ${c1.portas}`)
+    console.log(`pneus: ${c1.pneus}`)
+    console.log(`estado: ${c1.estado}`)
+    console.log(`cor: ${c1.cor}`)
+    console.log(`velocidade: ${c1.vel}`)
+    console.log( '----------------------')
+    
+    class militar extends carro{
+        constructor(nome , portas , pneus , municao , blindagem){
+            super(nome , portas , pneus)
+            this.municao = municao
+            this.blindagem = blindagem
+            this.cor = 'verde'
+        }
+        atirar= function(balas){
+            this.municao+= -balas
+        }
+        atingido= function(){
+            this.blindagem+= -10
+        }
+    }
+
+    const c2= new militar('tanque' , 1, 12 , 50 , 100)
+    c2.atirar(20)
+    c2.ligar()
+    c2.atingido()
+    console.log(`nome: ${c2.nome}`)
+    console.log(`portas: ${c2.portas}`)
+    console.log(`pneus: ${c2.pneus}`)
+    console.log(`estado: ${c2.estado}`)
+    console.log(`cor: ${c2.cor}`)
+    console.log(`velocidade: ${c2.vel}`)
+    console.log(`blindagem: ${c2.blindagem}`)
+    console.log(`munição: ${c2.municao}`)
+    console.log('-------------------------')
+
+    class esportivo extends carro{
+        constructor(velmax , nome , portas , pneus){        
+        super(nome , portas , pneus)
+        this.velmax = velmax
+    }
+    acelerar= function(velAtu){
+        this.vel = velAtu
+    }
+}
+    const c3 = new esportivo(340 , 'bmw m3' , 2 , 4)
+    c3.setcor('azul')
+    c3.ligar()
+    c3.acelerar(50)
+    console.log(`nome: ${c3.nome}`)
+    console.log(`portas: ${c3.portas}`)
+    console.log(`pneus: ${c3.pneus}`)
+    console.log(`estado: ${c3.estado}`)
+    console.log(`cor: ${c3.cor}`)
+    console.log(`velocidade: ${c3.vel}`)
+    console.log(`velocidade maxima: ${c3.velmax}`)
+
+</script>
+</html>
