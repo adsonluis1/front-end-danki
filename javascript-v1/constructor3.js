@@ -14,11 +14,20 @@ btn.addEventListener('click' , (evt)=>{
     if(inome.value == '' && iidade.value == ''){
         alert('preencha as formularios')
     }else{
+    
     const p = (new pessoa(inome.value , iidade.value))
     pessoas.push(p)
+       
+    pessoas.map((e)=>{
+        console.log(`nome: ${e.inome}`)
+        console.log(`idade: ${e.iidade}`)
+        })
     console.log(pessoas)
     }
-})
+    }
+)
+
+
 
 
 
