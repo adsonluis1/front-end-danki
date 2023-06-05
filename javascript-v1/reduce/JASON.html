@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ept-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASON</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+const pessoa= {
+    nome:'adson',
+    idade:18,
+    altura:1.68,
+    cursos:{
+        curso1:'html',
+        curso2:'css',
+        curso3:'javascript'
+    }
+}
+console.log(pessoa)
+const jspJSON= JSON.stringify(pessoa) //javascript para JASON
+const j = '{"nome":"adson","idade":18,"altura":1.68,"cursos":{"curso1":"html","curso2":"css","curso3":"javascript"}}'
+const JSONpjs= JSON.parse(j) //JSON para javascript
+console.log(jspJSON)
+console.log(JSONpjs)
+
+
+</script>
+</html>

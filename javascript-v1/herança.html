@@ -8,7 +8,8 @@
 </head>
 <body>
 
-
+    <input type="number" name="" id="inum">
+    <input type="button" value="vrumm" id="vrum">
 </body>
 <script>
 
@@ -89,7 +90,13 @@
     const c3 = new esportivo(340 , 'bmw m3' , 2 , 4)
     c3.setcor('azul')
     c3.ligar()
-    c3.acelerar(50)
+    const num= document.getElementById('inum')
+    const vrum = document.getElementById('vrum')
+    vrum.addEventListener('click' , (evt)=>{
+        c3.acelerar(num.value)
+        console.log(`velocidade nova: ${c3.vel}`)
+    })
+
     console.log(`nome: ${c3.nome}`)
     console.log(`portas: ${c3.portas}`)
     console.log(`pneus: ${c3.pneus}`)
