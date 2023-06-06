@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ok{
+            color: blue;
+        }
+        .notok{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="tela"></div>
+</body>
+
+<script>
+    const tela= document.getElementById('tela')
+    
+    let promeca = new Promise((resolve , reject)=>{
+        const valor = true
+        setTimeout(()=>{
+            if(valor){
+                resolve('tudo ok')
+            }else{
+                reject('tudo errado')
+            }
+        },3000)
+ })
+        promeca.then((retorno)=>{
+            tela.innerHTML= retorno
+            tela.classList.add('ok')
+            tela.classList.remove('notok')
+        })
+
+        promeca.catch((retorno)=>{
+            tela.innerHTML= retorno
+            tela.classList.add('notok')
+            tela.classList.remove('ok')
+       
+    })
+        
+    
+    
+
+    tela.innerHTML= 'processando...'
+</script>
+
+</html>

@@ -1,70 +1,64 @@
-const b1 = document.getElementById('b1')
-const b2 = document.getElementById('b2')
-const b3 = document.getElementById('b3')
-const b4 = document.getElementById('b4')
-const b5 = document.getElementById('b5')
-const b6 = document.getElementById('b6')
-const b7 = document.getElementById('b7')
-const b8 = document.getElementById('b8')
-const b9= document.getElementById('b9')
-const tela = document.getElementById('tela')
-const bmais= document.getElementById('bmais')
-const bigual = document.getElementById('bigual')
-
-b1.addEventListener('click' , ()=>{
-    tela.innerHTML+= 1
-})
-
-b2.addEventListener('click' , ()=>{
-    tela.innerHTML+= 2
-})
-
-b3.addEventListener('click' , ()=>{
-    tela.innerHTML+= 3
-})
-
-b4.addEventListener('click' , ()=>{
-    tela.innerHTML+= 4
-})
-
-b5.addEventListener('click' , ()=>{
-    tela.innerHTML+= 5
-})
-
-b6.addEventListener('click' , ()=>{
-    tela.innerHTML+= 6
-})
-
-b7.addEventListener('click' , ()=>{
-    tela.innerHTML+= 7
-})
-
-b8.addEventListener('click' , ()=>{
-    tela.innerHTML+= 8
-})
-
-b9.addEventListener('click' , ()=>{
-    tela.innerHTML+= 9
-})
-
-let num = []
-
-bmais.addEventListener('click' , ()=>{
-
-    num.push(Number(tela.textContent))
-    tela.innerText= '' 
-    tela.value = 0  
-})
+const btnNum= document.querySelectorAll('.num')
+const btnOp= document.querySelectorAll('.op')
+const b1= document.getElementById('b1')
+const display= document.getElementById('tela')
+const bigual= document.getElementById('bigual')
+console.log([...btnNum])
+console.log([...btnOp])
+let veri = false
+let veri2 = false
+let vreiS = false
 
 
-bigual.addEventListener('click' , ()=>{
-    num.push(Number(tela.textContent))
-    let num2 = 0
-       num.map((e)=>{
-        console.log(e)
-        num2+= e
+btnNum.forEach((ele)=>{
+    ele.addEventListener('click' , (e)=>{
+        if(e.target.innerHTML== ',' && display.innerHTML == ''){
+            display.innerHTML= '0.'
+        }
+        else if(e.target.innerHTML == ',' && veri == false && veri2== false){
+            display.innerHTML+= '.'
+            veri=true
+            veri2= true
+        }
+        else if(e.target.innerHTML != ','){
+            display.innerHTML+=e.target.innerHTML
+            veri = false
+            vreiS = false
+        }
+        console.log('veri= ' +veri)
+        console.log('veri2= ' +veri2)
+        console.log(vreiS)
     })
-    tela.innerHTML= '' 
-    console.log(num)
-    console.log(num2)
+})
+
+btnOp.forEach((ele)=>{
+    ele.addEventListener('click' , (e)=>{
+        if(vreiS == false && e.target.innerHTML != 'C'){
+            display.innerHTML+= e.target.innerHTML
+            console.log(e.target.innerHTML)
+            vreiS = true
+            veri2 = false
+            veri= true
+        }
+        else if(e.target.innerHTML == 'C'){
+            display.innerHTML= ''
+        }
+        console.log('veri= ' +veri)
+        console.log('veri2= ' +veri2)
+        console.log(vreiS)
+})
+
+})
+
+bigual.addEventListener('click' , (e)=>{
+    let res = eval(display.innerHTML)
+    display.innerHTML= res
+    console.log(display.innerHTML)
+})
+
+console.log(eval(10.5 + 0.5))
+
+const copiar= document.querySelector('#copiar')
+copiar.addEventListener('click' , ()=>{
+    navigator.clipboard.writeText(display.innerHTML)
 })
