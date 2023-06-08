@@ -32,16 +32,22 @@
             flex-direction: column;
 
         }
+        .alarme{
+            background-color: red !important;
+        }
+        .padrao{
+            background-color:rgb(185, 185, 185) !important;
+        }
     </style>
 </head>
 <body>
-    <section>
+    <section id="tudo">
         
         <div id="div_data"></div>
-        <div id="relogio">00 : 00 : 00</div>
+        <div id="relogio"></div>
         <div id="alarme">
-            <!-- <div>hora do alarme:</div> -->
-            <!-- <form>
+            <div>hora do alarme: <span  id="tela"></span></div> 
+            <form>
                 <label for="tempo">Informe o tempo do alarme em segundos</label>
                 <br>
                 <input type="number" name="" id="tempo">
@@ -51,51 +57,13 @@
                 <input type="button" value="confimar">
                 <input type="button" value="parar">
                 </div>
-            </form> -->
+            </form>
 
         </div>
         
     </section>
 </body>
 
-<script>
-    const relogio = document.getElementById('relogio')
-    const div_data= document.getElementById('div_data')
-    const tempo = document.getElementById('tempo')
-
-const relo =()=>{
-let data = new Date()
-let hora = data.getHours()
-hora=hora<10?'0'+hora:hora
-let minuto = data.getMinutes()
-minuto=minuto<10?'0'+minuto:minuto
-let segundos = data.getSeconds()
-segundos=segundos<10?'0'+segundos:segundos
-let horacompleta =hora + ' : ' + minuto + ' : ' + segundos
-relogio.innerHTML=horacompleta
-}
-
-const v_data= ()=>{
-    let data = new Date()
-    let dia= data.getDate()
-    dia=dia<10?'0'+dia:dia
-    let mes= data.getMonth()+1
-    mes=mes<10?'0'+mes:mes
-    let ano= data.getFullYear()
-    const fulldata= `${dia}/${mes}/${ano}`
-    div_data.innerHTML= fulldata
-    
-}
-
-v_data()
-const intervalo1= setInterval(v_data,43200000)
-const intervalo =setInterval(relo,1000)
-relo()
-
-const hehe= new Date
-
-hehe.get
-
-</script>
+<script src="js.js"></script>
 
 </html>
