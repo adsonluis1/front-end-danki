@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animação</title>
+    <style>
+        #bolinha{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50%;
+
+        }
+        .animacao1{
+            transition: 2s;
+            background-color: yellow !important;
+            /* position: absolute !important;
+            left: 79.7% !important; */
+
+
+        }
+        .animacao2{
+            transition: 2s;
+            background-color: green !important;
+            
+        }
+        section{
+            border: 1px solid;
+            height: 104px;
+            background-image: linear-gradient(to left,yellow , green);
+            border-radius: 30px;
+            display: flex !important;
+            justify-content: baseline !important;
+        }
+        .section1{
+            transition: 2s;
+            display: flex !important;
+            justify-content: end !important;
+        }
+    </style>
+</head>
+<body>
+    <section id="tela">
+    <div id="bolinha"></div>
+    </section>
+</body>
+<script>
+const bolinha = document.getElementById('bolinha')
+const tela= document.getElementById('tela')
+bolinha.addEventListener('click' , (evt)=>{
+       
+        if(bolinha.className== 'animacao1'){
+            bolinha.classList.remove('animacao1')
+            bolinha.classList.add('animacao2')
+            
+
+        }else if(bolinha.className== 'animacao2'){
+            bolinha.classList.add('animacao1')
+            bolinha.classList.remove('animacao2')
+        }else if(bolinha.className== ''){
+             bolinha.classList.add('animacao1')
+             tela.classList.add('section1')
+        }
+       
+        console.log(bolinha);
+        // bolinha.classList.add('animacao')
+    
+})
+
+</script>
+</html>

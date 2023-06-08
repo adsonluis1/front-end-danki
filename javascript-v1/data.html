@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+    <style>
+        #relogio{
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+            background-color: rgb(53, 53, 53);
+            border-radius: 10px;
+            color: rgb(0, 255, 0);
+            font-size: 4em;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section{
+            background-color: rgb(185, 185, 185);
+            width: 600px;
+            height: 500px;
+            border: 5px solid rgb(53, 53, 53);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        
+        <div id="div_data"></div>
+        <div id="relogio">00 : 00 : 00</div>
+        <div id="alarme">
+            <div>hora do alarme:</div>
+            <form>
+                <label for="tempo">Informe o tempo do alarme em segundos</label>
+                <br>
+                <input type="number" name="" id="tempo">
+                <br>
+                <br>
+                <div id="botoes">
+                <input type="button" value="confimar">
+                <input type="button" value="parar">
+                </div>
+            </form>
+
+        </div>
+        
+    </section>
+</body>
+
+<script>
+    const relogio = document.getElementById('relogio')
+    const div_data= document.getElementById('div_data')
+    const tempo = document.getElementById('tempo')
+
+const relo =()=>{
+let data = new Date()
+let hora = data.getHours()
+hora=hora<10?'0'+hora:hora
+let minuto = data.getMinutes()
+minuto=minuto<10?'0'+minuto:minuto
+let segundos = data.getSeconds()
+segundos=segundos<10?'0'+segundos:segundos
+let horacompleta =hora + ' : ' + minuto + ' : ' + segundos
+relogio.innerHTML=horacompleta
+}
+
+const v_data= ()=>{
+    let data = new Date()
+    let dia= data.getDate()
+    dia=dia<10?'0'+dia:dia
+    let mes= data.getMonth()+1
+    mes=mes<10?'0'+mes:mes
+    let ano= data.getFullYear()
+    const fulldata= `${dia}/${mes}/${ano}`
+    div_data.innerHTML= fulldata
+    
+}
+
+v_data()
+const intervalo1= setInterval(v_data,43200000)
+const intervalo =setInterval(relo,1000)
+relo()
+
+const hehe= new Date
+
+hehe.get
+
+</script>
+
+</html>
