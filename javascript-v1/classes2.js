@@ -10,16 +10,16 @@ let num_bolas = 0
 
 class Bolas{
     constructor(palco , arraybolas){
-        this.tam = Math.floor(Math.random*20+5)
-        this.velx= Math.floor(Math.random*5+1)
-        this.vely=  Math.floor(Math.random*5+1)
-        this.direcaoX=  Math.floor(Math.random*10)>5 ? 1 : -1
-        this.direcaoY=  Math.floor(Math.random*10)>5 ? 1 : -1
+        this.tam = Math.floor(Math.random()*20+10)
+        this.velx= Math.floor(Math.random()*5+1)
+        this.vely=  Math.floor(Math.random()*5+1)
+        this.direcaoX=  Math.floor(Math.random()*10)>5 ? 1 : -1
+        this.direcaoY=  Math.floor(Math.random()*10)>5 ? 1 : -1
         this.spanw_x= Math.floor(Math.random()*(largura_palco - this.tam))
         this.spanw_y= Math.floor(Math.random()*(altura_palco - this.tam))
-        this.r=  Math.floor(Math.random*255)
-        this.g=  Math.floor(Math.random*255)
-        this.b=  Math.floor(Math.random*255)
+        this.r=  Math.floor(Math.random()*255)
+        this.g=  Math.floor(Math.random()*255)
+        this.b=  Math.floor(Math.random()*255)
         this.palco = palco
         this.arraybolas= arraybolas
         this.id= Date.now()+'_'+ Math.floor(Math.random()*100000000000)
@@ -50,7 +50,7 @@ class Bolas{
         div.setAttribute('id' , this.id)
         div.setAttribute('class' ,  'bolinha')
         div.setAttribute('style' , `left:${this.spanw_x}; top${this.spanw_y}; width:${this.tam}px; heigth: ${this.tam}px; background-color: rgb(${this.r}, ${this.g},${this.b})`)
-        this.palco.appendChild(div)
+        palco.appendChild(div)
     }
 
     controle_de_bordas=()=>{
@@ -68,10 +68,10 @@ class Bolas{
     }
 
     mexer=()=>{
-        controle_de_bordas()
         this.spanw_x+= this.direcaoX*this.velx
         this.spanw_y+= this.direcaoY*this.vely
-        this.eu.setAttribute('style' , `left:${this.spanw_x}; top${this.spanw_y}; width:${this.tam}px; heigth: ${this.tam}px; background-color: rgb(${this.r}, ${this.g},${this.b})`)
+        this.controle_de_bordas()
+        this.eu.setAttribute('style' , `left:${this.spanw_x}px; top:${this.spanw_y}px; width:${this.tam}px;height: ${this.tam}px; background-color: rgb(${this.r}, ${this.g},${this.b})`)
         if(this.spanw_x > largura_palco || this.spanw_y > altura_palco){
             this.remover()
         }
@@ -85,8 +85,9 @@ window.addEventListener('resize' , ()=>{
 
 btn_add.addEventListener('click' , ()=>{
     const qtd = txt_num
+    
 
-    for(let i = 0; i<qtd; i++){
+    for(let i = 0; i<qtd.value; i++){
         bolas.push(new Bolas(bolas, palco))
     }
 })

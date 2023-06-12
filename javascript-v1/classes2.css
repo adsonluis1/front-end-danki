@@ -11,8 +11,8 @@ header{
     justify-content: center;
 }
 
-div{
-    border: 2px solid black;
+.divs{
+    border: 2px solid rgb(0, 0, 0);
     margin: 5px;
     padding: 5px;
     display: flex;
@@ -40,13 +40,12 @@ input{
 }
 
 .btn{
-    background-color: aquamarine;
+    background-color: rgb(127, 255, 212);
 }
 
-main{
-    width: 99.5%;
+#palco{
+    width: 96.5%;
     height: 80vh;
-    border: 2px solid black;
 }
 
 .bolinha{
