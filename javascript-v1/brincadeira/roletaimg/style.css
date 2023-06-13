@@ -1,0 +1,71 @@
+#carrossel div{
+    width: 399px;
+    height: 400px;
+    background-position: center center;
+}
+
+#img1{
+    background-image: url(elemento-agua.png);
+    display: none;
+}
+#img2{
+    background-image: url(elemento-fogo.png);
+    display: none;
+}
+#img3{
+    background-image: url(elemnto-relampago.png);
+    display: none;
+}
+
+#carrossel{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: transparent;
+    border: transparent;
+    color: red;
+    font-size: 4em;
+    cursor: pointer;
+}
+
+.selecionado{
+    transition: 2s;
+    display: block !important;
+}
+
+.saindo{
+    transition: 2s;
+    position: absolute;
+    left: 60%;
+}
+#select{
+   display: flex;
+   justify-content: center;
+}
+
+#select div{
+    margin-top: 10px;
+    width: 126px;
+    height: 126px;
+    background-position: center center;
+    cursor: pointer;
+}
+
+#sele_1{
+    background-image: url(elemento-agua.png);
+    margin-right: 10px;
+    border: 2px solid rgb(76, 179, 247);
+}
+
+#sele_2{
+    background-image: url(elemento-fogo.png);
+    margin-right: 10px;
+    border:2px solid red ;
+}
+
+#sele_3{
+    background-image: url(elemnto-relampago.png);
+    border: 2px solid yellow;
+}
