@@ -29,7 +29,7 @@
             border: 2px solid white;
             color: white;
         }
-        #outdor{
+        .outdor{
             border: 2px solid navy;
             width: 100%;
             height: auto;
@@ -38,6 +38,18 @@
         }
         #tela{
             color: white;
+        }
+
+        .div{
+            background-color: blue;
+            border: 2px solid black;
+            width: 100px;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -60,15 +72,15 @@
             <button id="click">Enviar</button>
             </div>
 
-            <div id="outdor">
-                <p id="tela"></p>
+            <div class="outdor" id="tela">
+                
             </div>
 
         </section>
 
     </main>
 </body>
-<script src="constructor3.js"></script>
+<script src="constructor5.js"></script>
 <!-- <script>
     class Pessoa{
         constructor(inome , iidade){

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obj literais</title>
+</head>
+<body>
+    <div id="tela"></div>
+</body>
+<script>
+const tela= document.getElementById('tela')
+
+let carro1={
+    marca:'fiat',
+    nome: 'uno',
+    modelo:'milie',
+    ano: 2003,
+    portas: 4,
+    completo:'não',
+    info:function(e){
+        console.log(e)
+    }
+}
+
+let carro=[{
+    marca:'fiat',
+    nome: 'uno',
+    modelo:'milie',
+    ano: 2003,
+    portas: 4,
+    completo:'não'
+},
+    {
+    marca:'reno',
+    nome: 'sandero',
+    modelo:'RS',
+    ano: 2020,
+    portas: 4,
+    completo:'sim'  
+    }
+]
+
+const carro2= Object.create(carro1)
+carro2.marca= 'jeep'
+carro2.nome='renegade'
+carro2.modelo= 'flex'
+carro2.ano= 2023
+carro2.portas= 4
+carro2.completo= 'sim'
+carro2.potencia= 180 + ' cavalos'
+//-----------------------------------------
+
+const c3= Object.assign(carro1)
+console.log('--------------------------')
+c3.info(c3)
+console.log('--------------------------')
+//-----------------------------------------
+console.log(carro2)
+carro1['cavalos']=130
+carro[1].cavalos= 200
+console.log(carro1)
+carro.map((e)=>{
+    console.log(e)
+})
+</script>
+</html>

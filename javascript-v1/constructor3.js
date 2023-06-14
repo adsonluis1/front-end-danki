@@ -5,19 +5,18 @@ class pessoa{
     }
 }
 
-
+let nomes = []
 let pessoas= []
 const btn = document.getElementById('click')
 btn.addEventListener('click' , (evt)=>{
-    let inome= document.getElementById('inome')
+    let iinome= document.getElementById('inome')
     let iidade= document.getElementById('iidade')
-    if(inome.value == '' && iidade.value == ''){
+    if(iinome.value == '' && iidade.value == ''){
         alert('preencha as formularios')
     }else{
     
-    const p = (new pessoa(inome.value , iidade.value))
+    const p = (new pessoa(iinome.value , iidade.value))
     pessoas.push(p)
-       
     pessoas.map((e)=>{
         console.log(`nome: ${e.inome}`)
         console.log(`idade: ${e.iidade}`)
@@ -26,7 +25,7 @@ btn.addEventListener('click' , (evt)=>{
     }
     }
 )
-
+    
 
 
 
