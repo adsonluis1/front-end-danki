@@ -1,5 +1,6 @@
 import { contatos } from "./bancodados.js";
-const tela = document.getElementById('tela')
+
+const tela= document.getElementById('tela')
 let nome
 let numero
 let email
@@ -26,12 +27,19 @@ let contato={
         div.innerHTML+= nome + '<br>'
         div.innerHTML+= numero + '<br>'
         div.innerHTML+= email + '<br>'
-    },
-    colocarnome:()=>{
+        const btn = document.createElement('button')
+        btn.setAttribute('class' , 'btn2')
+        div.appendChild(btn)
+        btn.innerHTML= '🗑️'
+        div.lastChild.addEventListener('click' , (evt)=>{
+            tela.removeChild(evt.target.parentNode)
+        })
+        
+    
+    }
         
     }
     
     
-}
 
 export default contato

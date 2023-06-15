@@ -6,6 +6,8 @@ const iemail = document.getElementById('iemail')
 const itele = document.getElementById('itele')
 const btn = document.getElementById('btn')
 const tela = document.getElementById('tela')
+const btn2= [document.getElementsByClassName('btn2')]
+
 
 
 btn.addEventListener('click' , ()=>{
@@ -24,8 +26,8 @@ btn.addEventListener('click' , ()=>{
         contato.setemail(iemail.value)
         contato.setnumero(itele.value)
         contato.creatediv()
-        contato.colocarnome()
         console.log(contato.getcontatos())
+        
     }
     
     
