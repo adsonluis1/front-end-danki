@@ -31,8 +31,26 @@ let contato={
         btn.setAttribute('class' , 'btn2')
         div.appendChild(btn)
         btn.innerHTML= '🗑️'
+        div.child
         div.lastChild.addEventListener('click' , (evt)=>{
-            tela.removeChild(evt.target.parentNode)
+            let nomes =evt.target.parentNode.childNodes[0]
+            let numero_tel =evt.target.parentNode.childNodes[2]
+            let eemail= evt.target.parentNode.childNodes[4]
+           
+            
+
+
+
+
+               var index = contatos.indexOf(nomes)
+               if(index > -1){
+                contatos.splice(index, 1)
+               }
+            // tela.removeChild(evt.target.parentNode)
+            console.log(contatos)
+
+       
+            
         })
         
     
