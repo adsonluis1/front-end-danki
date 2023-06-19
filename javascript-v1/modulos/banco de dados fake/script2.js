@@ -1,6 +1,7 @@
 import { contatos } from "./bancodados.js";
 
 const tela= document.getElementById('tela')
+let nomes2 = []
 let nome
 let numero
 let email
@@ -31,25 +32,12 @@ let contato={
         btn.setAttribute('class' , 'btn2')
         div.appendChild(btn)
         btn.innerHTML= '🗑️'
-        div.child
+        
         div.lastChild.addEventListener('click' , (evt)=>{
-            let nomes =evt.target.parentNode.childNodes[0]
-            let numero_tel =evt.target.parentNode.childNodes[2]
-            let eemail= evt.target.parentNode.childNodes[4]
-           
+            // pra achar a div
             
-
-
-
-
-               var index = contatos.indexOf(nomes)
-               if(index > -1){
-                contatos.splice(index, 1)
-               }
-            // tela.removeChild(evt.target.parentNode)
-            console.log(contatos)
-
-       
+            console.log(evt.target.parentNode.innerText)
+            // evt.target.parentNode.innerText pra achar os textos
             
         })
         
