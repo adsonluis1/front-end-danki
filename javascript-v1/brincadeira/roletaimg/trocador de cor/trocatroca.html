@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hahai</title>
+</head>
+<body id="tela">
+    
+</body>
+<script>
+    const tela = document.getElementById('tela')
+    const pisca =setInterval(() => {
+
+        let r = Math.floor(Math.random()*255)
+        let g = Math.floor(Math.random()*255)
+        let b = Math.floor(Math.random()*255)
+        tela.style.backgroundColor= `rgb(${r},${g},${b})`
+
+    },200)
+    let btn = true
+    if(btn === true){
+
+    }else if(btn != true){
+    clearInterval(pisca)}
+</script>
+</html>

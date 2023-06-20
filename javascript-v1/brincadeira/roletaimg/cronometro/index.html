@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hehe</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #hehe{
+            display: none;
+        }
+        .hehe1{
+            /* display certo */
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body id="pisca">
+    <main>
+        <div>
+        <p id="tela">00</p>
+        </div>
+        <form id="hehe">
+            <label for="temp">tempo em segundos</label>
+            <input type="number" name="" id="temp">
+        </form>
+        <form>
+       <input type="button" value="setar time" id="btn_setar">
+        <button id="btn_reset"> reset</button>
+        <input type="button" value="go" id="btn_go">
+        </form>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>
