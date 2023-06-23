@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    background-image: linear-gradient(to bottom,rgb(110, 110, 110), rgb(90, 90, 90) );
+    padding: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+#div_tela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(83, 175, 83);
+    border: 2px solid black;
+    height: 40px;
+    width: 150px;
+    margin: 10px 0px;
+}
+
+#hehe{
+    display: none;
+}
+
+.hehe1{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type='number']{
+    width: 120px;
+    height: 15px;
+    margin: 10px 0px;
+}
+
+input[type='button'], button{
+    padding: 2%;
+    
+}
+
+#btn_topo_pt1{
+    width: 45px;
+    height: 8px;
+    background-color: grey;
+    border: 2px solid black;
+}
+
+#btn_topo_pt2{
+    width: 30px;
+    height: 15px;
+    background-image: linear-gradient(to bottom, grey, rgb(110, 110, 110) );
+    border: 2px solid black;
+}
