@@ -1,37 +1,49 @@
 const btn_direita= document.getElementById('btn_direita')
 const btn_esquerda = document.getElementById('btn_esquerda')
 const carro = document.getElementById('carro')
+const btn_parar = document.getElementById('btn_parar')
+
 let x = 0 
 
-let width = window.innerWidth
+let width = window.innerWidth - 40
+let pode = true
 
- 
+const movi= ()=>{ 
+    
+    if(x < width){
+        x = x+10
+    carro.setAttribute('style' , `left:${x}px;`)
+    console.log(x)
+    }
+}
+
+const movi2= ()=>{ 
+   
+    if(x > 0){
+    x = x-10
+    carro.setAttribute('style' , `left:${x}px;`)
+    console.log(x)
+    }
+}
+
+window.addEventListener('resize' , ()=>{
+    width= window.innerWidth - 40
+})
 
 btn_direita.addEventListener('click' , ()=>{
-    console.log(x)
-    console.log(width)
-    const temp =setInterval(()=>{
-    if(width > x ){
-     x= x+10
-     carro.setAttribute('style' , `left:${x}px;`)
-    }
- },100)
- 
-
- 
-    clearInterval(temp2)
+    clearInterval(pode)
+    pode= setInterval(movi,10,1)
 })
 
 btn_esquerda.addEventListener('click' , ()=>{
-   
-    console.log(x)
-    const temp2 = setInterval(()=>{
-        x= x-10
-        if(x > 0){
-    carro.setAttribute('style' , `left:${x}px;`)
-    }
-    })
+    clearInterval(pode)
+    pode= setInterval(movi2,10)
     
-   
 })
+
+btn_parar.addEventListener('click', ()=>{
+    clearInterval(pode)
+})
+
+
 
