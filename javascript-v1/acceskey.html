@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .quadrado{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+        }
+        p{
+            margin-right: 100px;
+        }
+        #dv1{
+            background-color: red;
+            position: absolute;
+            width: 134px;
+            left: 300px;
+            top: 435px;
+        }   
+        #dv2{
+            background-color: blue;  
+            position: absolute;
+            width: 212px;
+            left: 347px;
+            top: 97px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p id="altura">altura=</p>
+        <p id="largura">largura=</p>
+        <p id="x">resx=</p>
+        <p id="y">resy=</p>
+    </header>
+    <main>
+        <h1>para ultilar click lembre de apertar no altura</h1>
+        <div id="dv1" class="quadrado">A</div>
+        <div id="dv2" class="quadrado">S</div>
+    </main>
+</body>
+<script>
+    const dv1 = document.getElementById('dv1')
+    const dv2 = document.getElementById('dv2')
+    const altura = document.getElementById('altura')
+    const largura = document.getElementById('largura')
+    const x = document.getElementById('x')
+    const y = document.getElementById('y')
+    dv1.accessKey = 'a'
+    dv2.accessKey = 's'
+
+    console.log(dv1.getBoundingClientRect())
+    console.log(dv2.getBoundingClientRect())
+    const info=(el)=>{
+        const dom = el.getBoundingClientRect()
+        altura.innerHTML='altura=' + dom.height
+        largura.innerHTML='largura=' + dom.width
+        x.innerHTML='resx=' + dom.x
+        y.innerHTML='resy=' + dom.y
+    }
+    dv1.addEventListener('click' , (evt)=>{
+        info(dv1)
+    })
+    dv2.addEventListener('click' , (evt)=>{
+        info(dv2)
+    })
+</script>
+</html>
