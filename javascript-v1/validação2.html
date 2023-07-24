@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: baseline;
+            margin: 10px;
+        }
+
+        input{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form>
+            <input type="text" name="" id="inome" minlength="4" maxlength="18" required placeholder="Nome">
+            <p id="tela_nome"></p>
+            <input type="number" name="" id="inota" min="0" max="10" required placeholder="Nota"> 
+            <input type="button" value="enviar" id="btn">
+            <p id="tela_nota"></p>
+        </form>
+    </main>
+</body>
+<script src="validação2.js"></script>
+</html>
