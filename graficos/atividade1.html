@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>criador de graficos</title>
     <link rel="stylesheet" href="atividade1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <main>
-        
+        <form id="form1">
+            <label for="inome">Titulo</label>
+            <input type="text" name="" id="inome" minlength="2">
+            <label for="inum">Valor</label>
+            <input type="number" name="" id="inum" min="1">
+            <p id="tela_aviso"></p>
+        </form>
+
+        <button id="btn">criar</button>
+        <button id="btn2">a</button>
+    
+        <div id="div_grafico">
+            <canvas id="grafico"></canvas>
+        </div>
+
     </main>
 </body>
 <script src="atividade1.js"></script>
