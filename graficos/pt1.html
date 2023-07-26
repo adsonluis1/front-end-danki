@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graficos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        main{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- graficos by chart.js -->
+    <main>
+        <canvas id="grafico"></canvas>
+
+        <script>
+            const ctx = document.getElementById('grafico');
+            const nomes = ['adson' , 'luis' , 'anne' , 'rafaelle']
+            const gols = ['38' , '30' , '37' , '21']
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: nomes,
+                datasets: [{
+                  label: '# of Votes',
+                  data: gols,
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          </script>
+    </main>
+</body>
+</html>
