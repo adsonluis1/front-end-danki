@@ -8,45 +8,86 @@ function find_mult_3(num){
     const tam = newNum.length
     let arr = []
     let divisiveis_3= []
-    if(tam == 2){
-        arr.push(newNum[0])
-        arr.push(newNum[1])
-        arr.push(newNum[0].toString() + newNum[1].toString())
-        arr.push(newNum[1].toString() + newNum[0].toString())
+    
+    function addPrincipais(){
+        newNum.forEach((evt)=>{
+            arr.push(evt)
+        })
     }
 
-    if(tam == 3){
-        arr.push(newNum[0])
-        arr.push(newNum[0].toString() + newNum[1].toString())
-        arr.push(newNum[0].toString() + newNum[2].toString())
-        arr.push(newNum[0].toString() + newNum[1].toString() +newNum[2].toString())
-        arr.push(newNum[0].toString() + newNum[2].toString() +newNum[1].toString())
-
-        arr.push(newNum[1])
-        arr.push(newNum[1].toString() + newNum[0].toString())
-        arr.push(newNum[1].toString() + newNum[2].toString())
-        arr.push(newNum[1].toString() + newNum[0].toString() +newNum[2].toString())
-        arr.push(newNum[1].toString() + newNum[2].toString() +newNum[0].toString())
-
-        arr.push(newNum[2])
-        arr.push(newNum[2].toString() + newNum[1].toString())
-        arr.push(newNum[2].toString() + newNum[0].toString())
-        arr.push(newNum[2].toString() + newNum[1].toString() +newNum[0].toString())
-        arr.push(newNum[2].toString() + newNum[0].toString() +newNum[1].toString())
-    }
-
-    if(tam == 4){
+    function desmembrar(num){
         
+        if(num.length == 2){ 
+            arr.push(num[0].toString() + num[1].toString())
+            arr.push(num[1].toString() + num[0].toString())
+        }
+        if(num.length == 3){
+            desmembrar(newNum[0].toString() + newNum[1].toString())
+            desmembrar(newNum[0].toString() + newNum[2].toString())
+            desmembrar(newNum[2].toString() + newNum[1].toString())
+            if(num.length == 4){
+            desmembrar(newNum[3].toString() + newNum[1].toString())
+            }
+            arr.push(num[0].toString() + num[1].toString() + num[2].toString())
+            arr.push(num[0].toString() + num[2].toString() + num[1].toString())
+            arr.push(num[1].toString() + num[0].toString() + num[2].toString())
+            arr.push(num[1].toString() + num[2].toString() + num[0].toString())
+            arr.push(num[2].toString() + num[1].toString() + num[0].toString())
+            arr.push(num[2].toString() + num[0].toString() + num[1].toString())
+        }
+        if(num.length == 4){
+            desmembrar(newNum[0].toString() + newNum[1].toString() + newNum[2].toString())
+            desmembrar(newNum[1].toString() + newNum[2].toString() + newNum[3].toString())
+            arr.push(newNum[0].toString() + newNum[1].toString() + newNum[2].toString() + newNum[3].toString())
+            arr.push(newNum[0].toString() + newNum[1].toString() + newNum[3].toString() + newNum[2].toString())
+            arr.push(newNum[0].toString() + newNum[2].toString() + newNum[1].toString() + newNum[3].toString())
+            arr.push(newNum[0].toString() + newNum[2].toString() + newNum[3].toString() + newNum[1].toString())
+            arr.push(newNum[0].toString() + newNum[3].toString() + newNum[2].toString() + newNum[1].toString())
+            arr.push(newNum[0].toString() + newNum[3].toString() + newNum[1].toString() + newNum[2].toString())
+            arr.push(newNum[1].toString() + newNum[0].toString() + newNum[2].toString() + newNum[3].toString())
+            arr.push(newNum[1].toString() + newNum[0].toString() + newNum[3].toString() + newNum[2].toString())
+            arr.push(newNum[1].toString() + newNum[2].toString() + newNum[0].toString() + newNum[3].toString())
+            arr.push(newNum[1].toString() + newNum[2].toString() + newNum[3].toString() + newNum[0].toString())
+            arr.push(newNum[1].toString() + newNum[3].toString() + newNum[0].toString() + newNum[2].toString())
+            arr.push(newNum[1].toString() + newNum[3].toString() + newNum[2].toString() + newNum[0].toString())
+            arr.push(newNum[2].toString() + newNum[0].toString() + newNum[1].toString() + newNum[3].toString())
+            arr.push(newNum[2].toString() + newNum[0].toString() + newNum[3].toString() + newNum[1].toString())
+            arr.push(newNum[2].toString() + newNum[1].toString() + newNum[0].toString() + newNum[3].toString())
+            arr.push(newNum[2].toString() + newNum[1].toString() + newNum[3].toString() + newNum[0].toString())
+            arr.push(newNum[2].toString() + newNum[3].toString() + newNum[0].toString() + newNum[1].toString())
+            arr.push(newNum[2].toString() + newNum[3].toString() + newNum[1].toString() + newNum[0].toString())
+            arr.push(newNum[3].toString() + newNum[0].toString() + newNum[1].toString() + newNum[2].toString())
+            arr.push(newNum[3].toString() + newNum[0].toString() + newNum[2].toString() + newNum[1].toString())
+            arr.push(newNum[3].toString() + newNum[1].toString() + newNum[2].toString() + newNum[0].toString())
+            arr.push(newNum[3].toString() + newNum[1].toString() + newNum[0].toString() + newNum[2].toString())
+            arr.push(newNum[3].toString() + newNum[2].toString() + newNum[1].toString() + newNum[0].toString())
+            arr.push(newNum[3].toString() + newNum[2].toString() + newNum[0].toString() + newNum[1].toString())
+
+        }
+    }
+    
+
+    if(tam == 2){
+        addPrincipais()
+        desmembrar(num.toString())
+    }
+    if(tam == 3){
+        addPrincipais()
+        desmembrar(newNum[0].toString() + newNum[1].toString() + newNum[2].toString())
+    }
+    if(tam == 4){
+        addPrincipais()
+        desmembrar(newNum[0].toString() + newNum[1].toString() + newNum[2].toString() + newNum[3].toString())
     }
 
-    arr.forEach((evt)=>{
-        if(evt % 3 === 0){
-            divisiveis_3.push(evt)
+    arr.map((evt)=>{
+        if(Number(evt) % 3 == 0 && divisiveis_3.includes(Number(evt)) === false && Number(evt) != 0){
+            divisiveis_3.push(Number(evt))
         }
     })
-
-    console.log(divisiveis_3.length)
-    // return [];
+    
+   
+    return [divisiveis_3.length, Math.max(...divisiveis_3)];
 }
 
-find_mult_3(362)
+console.log(find_mult_3(362))
