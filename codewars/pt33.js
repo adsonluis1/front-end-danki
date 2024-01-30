@@ -1,6 +1,4 @@
 function removeSmallest(numbers) {
-    // numbers.splice(numbers.indexOf(Math.min(...numbers)),1)
-    // return numbers
     let arr= []
     numbers.map((evt,i)=> {
         if(i != numbers.indexOf(Math.min(...numbers))){
