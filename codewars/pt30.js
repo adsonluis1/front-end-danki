@@ -3,7 +3,7 @@ const reverseSeq = n => {
     for(let a=1;a <= n;a++){
         arr.push(a)
     }
-    console.log(arr.sort((a,b)=>b-a))
+    return arr.sort((a,b)=>b-a)
 };
 
 reverseSeq(5)
