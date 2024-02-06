@@ -3,4 +3,4 @@ function abbrevName(name){
     return `${arr[0][0].toUpperCase()}.${arr[1][0].toUpperCase()}`
 }
 
-console.log(abbrevName('Sam'))
+console.log(abbrevName('Sam Ha'))
