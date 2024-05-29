@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#IdivForm{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+textarea {
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 250px;
+    min-height: 250px;
+}
+
+span{
+    background-color: red;
+    font-weight: 2em;
+}
+
+#Itela {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.sumir {
+    display: none;
+}
+
+
