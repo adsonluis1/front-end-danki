@@ -4,6 +4,7 @@ const Itest = document.querySelector('#Itest')
 const ItextArea = document.querySelector('#ItextArea')
 const form = document.querySelector('form')
 const div = document.createElement('div')
+const p = document.createElement('p')
 
 Itest.addEventListener('click', ()=>{
     const regex = new RegExp(Itext.value,Iflag.value)
@@ -12,9 +13,12 @@ Itest.addEventListener('click', ()=>{
     input?.map((e)=>{
         textValue = textValue.replaceAll(e,`<span>${e}</span>`)
     })
+    p.innerHTML = `quantidade encontrada: ${input?.length?input?.length:0}`
+    p.removeAttribute(`class`,`sumir`)
     div.setAttribute('id','Itela')
     div.innerHTML = `${textValue}`
-    form.appendChild(div) 
+    form.appendChild(p) 
+    form.appendChild(div)
     div.removeAttribute('class','sumir')
     ItextArea.setAttribute('class','sumir')
 })
@@ -23,6 +27,7 @@ div.addEventListener('click', ()=>{
     ItextArea.removeAttribute('class','sumir')
     ItextArea.focus()
     div.setAttribute('class','sumir')
+    p.setAttribute(`class`,`sumir`)
 })
 
 
