@@ -8,8 +8,8 @@ const div = document.createElement('div')
 Itest.addEventListener('click', ()=>{
     const regex = new RegExp(Itext.value,Iflag.value)
     const input = ItextArea.value.match(regex)
-    let textValue = ItextArea.value
-    input.map((e)=>{
+    let textValue =  ItextArea.value
+    input?.map((e)=>{
         textValue = textValue.replaceAll(e,`<span>${e}</span>`)
     })
     div.setAttribute('id','Itela')
