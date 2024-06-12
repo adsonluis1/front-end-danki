@@ -32,6 +32,10 @@ span{
     cursor: pointer;
 }
 
+#text{
+    width: 250px;
+}
+
 .sumir {
     display: none;
 }
