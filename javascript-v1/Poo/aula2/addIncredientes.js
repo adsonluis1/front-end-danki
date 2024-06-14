@@ -1,4 +1,6 @@
 import ingredientes from './incredientes.js'
+const IBtnFinalizar = document.querySelector('#Ifinalizar')
+const divError = document.createElement('div')
 
 function fistCharInUpper (string){
     string = string.charAt(0).toUpperCase()+string.slice(1)
@@ -9,9 +11,20 @@ function addIngrediente (index,salada){
     salada.ingredientes.push(ingredientes[index])
 }
 
+function clickFinalizar (element,salada){
+    divError.remove()
+    if(salada.ingredientes.length < 1){
+        divError.innerHTML= `
+            <p>Selecione Pelo menos 1 ingrediente</p>
+        `
+        element.appendChild(divError)
+    }
+}
+
 async function createDivsIngredientes (element,salada) {
     const section = document.createElement('section')
     section.setAttribute('id','SectionIngredientes')
+    ingredientes.sort((a,b)=> a.nome.localeCompare(b.nome))
     ingredientes.map(async (ingrediente,index)=>{
         const divIngredientes = document.createElement('div')
         divIngredientes.setAttribute('class','ingredientes')
@@ -27,9 +40,9 @@ async function createDivsIngredientes (element,salada) {
             addIngrediente(index,salada)
             console.log(salada)
         })
-    
     })    
     element.appendChild(section)
+    IBtnFinalizar.addEventListener('click',()=> clickFinalizar(element,salada))
 }
 
 export default createDivsIngredientes
