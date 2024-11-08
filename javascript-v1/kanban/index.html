@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styled.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Kanban</h1>
+        </div>
+    </header>
+    <aside>
+        <form>
+            <label>
+                Tarefa
+                <input required placeholder="Digite sua tarefa aqui" type="text" id="tarefa">
+            </label>
+
+            <div class="radios">
+                <label>
+                    Em aberto
+                    <input value="Aberto" required type="radio" name="tipo" id="">
+                </label>
+
+                <label>
+                    Em Negociação
+                    <input value="Negociacao" required type="radio" name="tipo" id="">
+                </label>
+
+                <label>
+                    Em Andamento
+                    <input value="Andamento" required type="radio" name="tipo" id="">
+                </label>
+
+                <label>
+                    Entregue
+                    <input value="Entregue" required type="radio" name="tipo" id="">
+                </label>
+            </div>
+
+            <button id="btnSubmit" type="submit">Criar</button>
+            <button id="btnResetar" type="button">Resetar</button>
+        </form>
+        <button id="btnAbrir">Abrir</button>
+    </aside>
+    <main>
+        <section class="kanban">
+            
+            <div class="containerDivKanban">
+                <h2 class="aberto">Em Aberto</h2>
+                <div class="colum Aberto"></div>
+            </div>
+            
+            <div class="containerDivKanban">
+                <h2 class="negociacao">Em Negociacão</h2>
+                
+                <div class="colum Negociacao"></div>
+            </div>
+            <div class="containerDivKanban">
+                <h2 class="andamento">Em Andamento</h2>
+                <div class="colum Andamento">
+                </div>
+            </div>
+            <div class="containerDivKanban">
+                <h2 class="entregue">Entregue</h2>
+                <div class="colum Entregue">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

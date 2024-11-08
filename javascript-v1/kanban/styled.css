@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    height: 100px;
+}
+
+aside {
+    transition: 0.5s;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    background-color: rgb(208, 208, 208);
+}
+
+#btnAbrir {
+    cursor: pointer;
+    padding: 4px 8px;
+    border: 1px solid;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#btnSubmit {
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 4px 8px;
+}
+
+#btnResetar {
+    padding: 4px 8px;
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form {
+    transition: 0.5s;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    gap: 10px;
+}
+
+form input {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+.open #btnAbrir {
+    position: relative;
+    top: 40px;
+}
+
+.open {
+    height: 200px;
+}
+
+.open form {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.radios {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.kanban  {
+    display: flex;
+    margin-top: 30px;
+    transition: 0.5s;
+    width: 100vw;
+    height: calc(100vh - 180px);
+    background-color: rgb(230, 230, 230);
+}
+
+.mini {
+    height: calc(100vh - 330px) !important;
+}
+
+.containerDivKanban {
+   width: 25vw;
+   overflow-y: auto;
+   max-height: calc(100vh - 280px);
+}
+
+.containerDivKanban > .colum {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;   
+}
+
+.mini .containerDivKanban {
+    height: calc(100vh - 330px) !important;
+}
+
+h2 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 25vw;
+    padding: 8px;
+}
+
+h2.aberto{
+    background-color: yellow;
+}
+
+h2.negociacao{
+    background-color: orangered;
+}
+
+h2.andamento{
+    background-color: skyblue;
+}
+
+h2.entregue{
+    background-color: greenyellow;
+}
+
+.divTarefa {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid;
+    background-color: white;
+    cursor: pointer;
+    gap: 10px;
+    width: 90%;
+    height: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.divBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.divBtn button {
+    padding: 4px 8px;
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.divTarefa p {
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
