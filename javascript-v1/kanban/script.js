@@ -8,6 +8,7 @@ const coluns = document.querySelectorAll('.containerDivKanban')
 let dbTarefas = localStorage.getItem('tarefas')
 const btnResetar = document.querySelector('#btnResetar')
 const colum = document.querySelectorAll('.colum')
+
 function saveInDb (tarefa){
     const oldTarefas = JSON.parse(localStorage.getItem('tarefas'))
     let exist = false
@@ -24,19 +25,19 @@ function saveInDb (tarefa){
     localStorage.setItem('tarefas',JSON.stringify(oldTarefas))
 }
 
-function deleteInDb (tarefa){
+function deleteInDb (id){
     const oldTarefas = JSON.parse(localStorage.getItem('tarefas'))
-    const newTarefas = oldTarefas.filter((oldTarefa)=> oldTarefa.id != tarefa.id)
+    const newTarefas = oldTarefas.filter((oldTarefa)=> oldTarefa.id != id)
     localStorage.setItem('tarefas',JSON.stringify(newTarefas))
-    const div = document.getElementById(tarefa.id)
+    const div = document.getElementById(id)
     div.remove()
 }
 
 function resetDb (){
-    localStorage.clear()
     colum.forEach((currentColum)=>{
         currentColum.innerHTML = ''
     })
+    localStorage.setItem('tarefas',JSON.stringify([]))
 }
 
 if(dbTarefas == null){
@@ -78,17 +79,21 @@ function renderTarefa (objTarefa){
     div.setAttribute('data-tipo',objTarefa.tipo)
     div.setAttribute('data-title',objTarefa.title)
     div.setAttribute('class',"divTarefa")
+    const divBtn = document.createElement('div')
+    divBtn.setAttribute('class','divBtn')
+    const btn = document.createElement('button')
+    btn.setAttribute('data-id',objTarefa.id)
+    btn.setAttribute('id','btnApagar')
+    btn.innerText= 'Apagar'
+    divBtn.appendChild(btn)
     div.innerHTML += `
         <p>${objTarefa.title}</p>
-        <div class="divBtn">
-            <button id="btnApagar">Apagar</button>
-        </div>
     `
+    div.appendChild(divBtn)
     divKanbanTarefa.appendChild(div)
-    const btnApagar = document.querySelector('#btnApagar')
     
-    btnApagar.addEventListener('click',()=>{
-        deleteInDb(objTarefa)
+    btn.addEventListener('click',(evt)=>{
+        deleteInDb(evt.target.getAttribute('data-id'))
     })
     
     div.addEventListener('dragstart',(evt)=>{
