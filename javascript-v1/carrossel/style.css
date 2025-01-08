@@ -1,0 +1,34 @@
+.carrossel-container {
+    overflow-x: scroll;
+    max-width: 100vw;
+}
+
+.carrossel-container::-webkit-scrollbar{
+    display: none;
+}
+
+.carrossel {
+    display: flex;
+    min-width:300vw;
+}
+
+.item {
+    transition: .4s;
+    width: 100vw;
+}
+
+img{
+    width: 100%;
+}
+
+.animate {
+    transition: .4s;
+    transform: translateX(-0%);
+}
+
+.controllers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
